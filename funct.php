@@ -1,7 +1,5 @@
 <?php
-	$web = 'http://localhost/rest-api';
-	$url = 'http://localhost/sarvis';
-	$site_title = 'WP REST API';
+	require_once('settings.php');
 	// get all posts and show
 	function Json_Data_Decoder($query){		
 		global $url;
