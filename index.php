@@ -5,9 +5,16 @@
 	<div class="row">
 		<section class="posts col-lg-9">
 			<div class="row">
-			<?php 
-				$posts = Json_Data_Decoder('posts');
-					
+			<?php
+			// get page id and check it, set default page
+			if(isset($_GET['page'])){
+				$page = htmlentities($_GET['page']);
+			}else{
+				$page = 1;
+			}
+			
+				// get posts with pagination
+				$posts = Get_Posts($page);
 					foreach ($posts as $post){
 						// get post id
 						$post_id = $post->id;
@@ -40,6 +47,10 @@
 						</div></article>';
 						
 					}
+					//pagination
+					echo '<ul class="pagination mx-auto">';
+						Pagination();
+					echo '</ul>';
 			?>
 			</div>
 		</section>

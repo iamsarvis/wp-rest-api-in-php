@@ -1,7 +1,7 @@
 <?php
 	require_once('settings.php');
-	// get all posts and show
-	function Json_Data_Decoder($query){		
+	// get post or page or search or etc; query should set one of them
+	function Json_Data_Decoder($query){
 		global $url;
 		$json = file_get_contents($url.'/wp-json/wp/v2/'. $query);
 		$data = json_decode($json);
@@ -13,6 +13,52 @@
 		$json = file_get_contents($url.'/wp-json/wp/v2/posts/'. $id);
 		$post_id = json_decode($json);
 		return $post_id;
+	}
+// get posts with pagination
+	// count pages of posts
+	function Count_Page(){
+		global $pagination;
+		$posts_count = Json_Data_Decoder('posts');
+		$postscount = count($posts_count);
+		$pagecount = $postscount/$pagination;
+		$pagecount = ceil($pagecount);
+		return $pagecount;
+	}
+	// get all post
+	function Get_Posts($page){
+		global $url;
+		global $pagination;
+		
+		if($page <= Count_Page()){
+			$json = file_get_contents($url.'/wp-json/wp/v2/posts?per_page='.$pagination.'&page='.$page);
+			$posts = json_decode($json);
+			return $posts;
+		}else{
+			header('Location: 404.php');
+		}
+	}
+	// pagination posts
+	function Pagination(){
+		global $web;
+		global $pagination;
+		$i = 1;
+		$pagecount = Count_Page();
+		if($pagecount > 1){
+			while($i <= $pagecount){
+				if($i == 1){
+					echo '
+					<li class="page-item"><a href="'.$web.'" class="page-link">'.$i.'</a></li>
+					';
+				}else{
+				echo '
+					<li class="page-item"><a href="'.$web.'/index.php?page='.$i.'" class="page-link">'.$i.'</a></li>
+				';
+				}
+				$i++;
+			}
+		}else{
+			return 0;
+		}
 	}
 	//get site title and post title
 	function Get_Title(){
