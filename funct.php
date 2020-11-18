@@ -29,7 +29,7 @@
 		}
 	}
 	//get media
-	// $media_size can be 'medium', 'large', 'thumbnail' or etc
+	// $size can be 'large', 'medium', 'thumbnail' or another image size of wordpress
 	function Get_Media($post_media, $size){
 		global $url;
 		$json = file_get_contents($url.'/wp-json/wp/v2/media?include='.$post_media);
