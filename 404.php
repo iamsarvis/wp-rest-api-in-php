@@ -4,38 +4,24 @@
 ?>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
-				<div class=" panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">صفحه درخواستی شما یافت نشد</h3>
+			<div class="col-md-9">
+				<div class="panel panel-default text-center">
+					<div class="panel-heading mb-3">
+						<h2 class="panel-title">404</h2>
 						<span style="margin-top: -15px;" class="pull-left">
-							 
+							Page Not Found
 						</span>
 					</div>
 					<div class="panel-body">
 						<p class="alert alert-danger">
-							کاربر گرامی صفحه یا مطلب درخواستی شما یافت نشد
+							You did not enter any text.	Enter at least one word to search.
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">اخرین مطالب</h3>
-					</div>
-					<div class="panel-body">
-						<ul class="posts-list">
-						<?php
-						// $latest=get("posts",10);
-						// while($post=mysql_fetch_assoc($latest)): ?>
-							<li ><a href="view.php?p=<?php // echo $post['post_ID']; ?>"><?php //echo $post['post_title']; ?></a></li>
-						<?php // endwhile; ?>
-						</ul>
-					</div>
-				</div>
-			</div>
+			<?php include 'sidebar.php'; ?>
 	  </div>
   </div>
+  <?php  ?>
 </body>
 </html>
