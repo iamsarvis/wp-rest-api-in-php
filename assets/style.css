@@ -1,0 +1,32 @@
+header.header{
+    margin-bottom: 20px;
+}
+article.post{
+    margin-bottom: 20px;
+}
+/*
+    single post
+*/
+div.article img{
+    width: 100%;
+}
+.post-thumbnail img{
+    width: 100%;
+}
+.post-meta > .post-title h2{
+    font-size: 25px;
+}
+.list-group-flush>li.list-group-item {
+    border-width: 1px 0 0;
+}
+li.child{
+    margin-left: 20px;
+}
+li.child-2{
+    margin-left: 40px;
+}
+.comment-avatar{
+    float: left;
+    margin-right: 10px;
+    border-radius: 100%;
+}
