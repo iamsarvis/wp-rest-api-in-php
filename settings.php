@@ -5,5 +5,8 @@
     $web = 'http://localhost/wp-rest-api-in-php';
     // url of wordpress website
     $url = 'http://localhost/sarvis';
+    // pagination posts
+        // you can specify the number of posts per page
+    $pagination = 10; 
 
 ?>
