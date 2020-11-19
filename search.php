@@ -8,7 +8,7 @@ require 'header.php';
 	<section class="col-lg-9">
 	<?php
 	if(!empty($_GET['searchtext'])){
-		$searchtext = htmlentities($_GET['searchtext']);
+		$searchtext = Get('searchtext');
 		$search_results = Search($searchtext);
 		$has_existed = count($search_results);
 		if($has_existed != 0){

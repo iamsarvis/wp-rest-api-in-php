@@ -7,6 +7,11 @@
 		$data = json_decode($json);
 		return $data;
 	}
+	//filter $_GET
+	function Get($text){
+		$get = htmlentities($_GET[$text]);
+		return $get;
+	}
 	// get json post and decode
 	function Json_Post_Id_Decoder ($id){
 		global $url;

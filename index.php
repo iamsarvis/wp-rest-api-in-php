@@ -8,7 +8,7 @@
 			<?php
 			// get page id and check it, set default page
 			if(isset($_GET['page'])){
-				$page = htmlentities($_GET['page']);
+				$page = Get('page');
 			}else{
 				$page = 1;
 			}

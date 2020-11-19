@@ -2,7 +2,7 @@
 require_once 'funct.php';
 
 if(isset($_GET['id'])){
-    $post_id = htmlentities(intval($_GET['id']));
+    $post_id = Get('id');
     $post = Json_Post_Id_Decoder($post_id);
     if($post == false){
         header("Location: 404.php");
