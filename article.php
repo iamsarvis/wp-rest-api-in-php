@@ -5,7 +5,7 @@ if(isset($_GET['id'])){
     $post_id = Get('id');
     $post = Json_Post_Id_Decoder($post_id);
     if($post == false){
-        header("Location: 404.php");
+        header("Location: $web/404.php");
 		die();
     } else{
 		// get info
@@ -20,7 +20,7 @@ if(isset($_GET['id'])){
 		$featured_image = Get_media($post_media, 'large');
 	}
 }else{
-	header("Location: 404.php");
+	header("Location: $web/404.php");
 }
 ?>
 <?php require 'header.php'; ?>
