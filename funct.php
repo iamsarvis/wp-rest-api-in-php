@@ -35,11 +35,12 @@
 		global $pagination;
 		
 		if($page <= Count_Page()){
+			global $web;
 			$json = file_get_contents($url.'/wp-json/wp/v2/posts?per_page='.$pagination.'&page='.$page);
 			$posts = json_decode($json);
 			return $posts;
 		}else{
-			header('Location: 404.php');
+			header("Location: $web/404.php");
 		}
 	}
 	// pagination posts
