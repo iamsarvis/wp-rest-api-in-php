@@ -30,3 +30,10 @@ li.child-2{
     margin-right: 10px;
     border-radius: 100%;
 }
+.footer {
+    position: relative;
+    bottom: 0 !important;
+    display: block;
+    width: 100%;
+    background-color: #f5f5f5;
+}

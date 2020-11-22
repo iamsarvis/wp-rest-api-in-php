@@ -1,8 +1,6 @@
-<footer class="footer container">
-    <div class="row">
-        <div class="col-4">hello</div>
-        <div class="col-4">hello2</div>
-        <div class="col-4">hello3</div>
+<footer class="footer bg-light">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <a href="http://iamsarvis.ir"> Sarvis</a>
     </div>
 </footer>
 <script src="../assets/jquery.min.js"></script>
