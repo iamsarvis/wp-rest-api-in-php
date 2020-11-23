@@ -1,12 +1,4 @@
 <section class="sidebar col-lg-3">
-    <div class="search">
-        <h4>Search</h4>
-        <form method="get" action="search.php">
-            <input type="text" name="searchtext"/>
-            <input type="submit" value="Search" />
-		</form>
-    </div>
-    <br />
     <div class="categories">
         <h4>Categories</h4>
         <ul class="list-group">
@@ -17,7 +9,7 @@
                 if($category->parent == 0){
                     $category_id = $category->id;
                     echo '
-                    <a href="'.$web.'/category.php?id='.$category_id.'"><li class="list-group-item  d-flex justify-content-between align-items-center">
+                    <a href="'.$web.'/category.php?id='.$category_id.'"><li class="list-group-item d-flex justify-content-between align-items-center">
                         '.$category->name.'
                         <span class="badge badge-primary badge-pill">'.$category->count.'</span>
                     </li></a>';
