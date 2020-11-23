@@ -1,6 +1,7 @@
 RewriteEngine on
 RewriteRule ^page/([0-9]+)$ index.php?page=$1 [NC,L]
 RewriteRule ^post/([0-9]+)$ article.php?id=$1 [NC,L]
+RewriteRule ^category/([0-9]+)$ category.php?cat=$1 [NC,L]
 
 
 ErrorDocument 404 /404.php
